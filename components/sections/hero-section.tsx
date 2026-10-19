@@ -147,9 +147,13 @@ export function HeroSection() {
                 </h1>
               </div>
 
-              <video>
-
-              </video>
+              <Image
+                src="/images/hero-mono.png"
+                alt="Modern architectural structure with reflection"
+                fill
+                className="absolute inset-0 z-10 object-cover"
+                priority
+              />
             </div>
 
             {/* Right Column */}
