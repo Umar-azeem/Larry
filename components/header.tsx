@@ -19,20 +19,45 @@ export function Header() {
   }, []);
 
   return (
-    <header 
+    <header
       className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-3xl transition-all duration-300 ${isScrolled ? "bg-background/80 backdrop-blur-md rounded-full" : "bg-transparent"}`}
       style={{
-        boxShadow: isScrolled ? "rgba(14, 63, 126, 0.04) 0px 0px 0px 1px, rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px, rgba(42, 51, 70, 0.04) 0px 6px 6px -3px, rgba(14, 63, 126, 0.04) 0px 12px 12px -6px, rgba(14, 63, 126, 0.04) 0px 24px 24px -12px" : "none"
+        boxShadow: isScrolled
+          ? "rgba(14, 63, 126, 0.04) 0px 0px 0px 1px, rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px, rgba(42, 51, 70, 0.04) 0px 6px 6px -3px, rgba(14, 63, 126, 0.04) 0px 12px 12px -6px, rgba(14, 63, 126, 0.04) 0px 24px 24px -12px"
+          : "none",
       }}
     >
       <div className="flex items-center justify-between transition-all duration-300 px-2 pl-5 py-2">
-        <Link href="#hero" className="text-lg font-medium tracking-tight transition-colors duration-300 text-foreground">
-          <Image
-            src="/images/logo.png"
-            alt="MONO"
-            width={100}
-            height={100}
-          />
+        <Link
+          href="#hero"
+          className="text-lg font-medium tracking-tight transition-colors duration-300 text-foreground"
+        >
+          <Link
+            href="#hero"
+            className="relative block h-18 w-[100px]"
+            aria-label="Home"
+          >
+            <Image
+              src="/images/lw.png"
+              alt="MONO"
+              width={100}
+              height={100}
+              priority
+              className={`absolute inset-0 h-20 w-28 object-contain transition-opacity duration-300 ${
+                isScrolled ? "opacity-0" : "opacity-100"
+              }`}
+            />
+            <Image
+              src="/images/lb.png"
+              alt="MONO"
+              width={100}
+              height={100}
+              priority
+              className={`absolute inset-0 h-20 w-28 object-contain transition-opacity duration-300 ${
+                isScrolled ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          </Link>
         </Link>
 
         {/* Desktop Navigation */}

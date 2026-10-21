@@ -1,0 +1,22 @@
+{
+  "currency": "USD",
+  "houses": [
+    { "id": 1,  "code": "H01", "name": "Savanna",   "beds": 3, "baths": 2, "garage": 2, "area": 168, "price": 480, "design": "/houses/h1p.jpeg",  "plan": "/houses/h1s.jpeg",  "extras": [] },
+    { "id": 2,  "code": "H02", "name": "Acacia",    "beds": 3, "baths": 2, "garage": 2, "area": 175, "price": 490, "design": "/houses/h2p.jpeg",  "plan": "/houses/h2s.jpeg",  "extras": [] },
+    { "id": 3,  "code": "H03", "name": "Baobab",    "beds": 4, "baths": 3, "garage": 2, "area": 210, "price": 560, "design": "/houses/h3p.jpeg",  "plan": "/houses/h3s.jpeg",  "extras": [] },
+    { "id": 4,  "code": "H04", "name": "Protea",    "beds": 4, "baths": 3, "garage": 2, "area": 232, "price": 590, "design": "/houses/h4p.jpeg",  "plan": "/houses/h4s.jpeg",  "extras": ["/houses/h4pp.jpeg"] },
+    { "id": 5,  "code": "H05", "name": "Mopane",    "beds": 3, "baths": 2, "garage": 2, "area": 180, "price": 500, "design": "/houses/h5p.jpeg",  "plan": "/houses/h5s.jpeg",  "extras": [] },
+    { "id": 6,  "code": "H06", "name": "Marula",    "beds": 4, "baths": 3, "garage": 2, "area": 245, "price": 620, "design": "/houses/h6p.jpeg",  "plan": "/houses/h6s.jpeg",  "extras": [] },
+    { "id": 7,  "code": "H07", "name": "Kopje",     "beds": 3, "baths": 2, "garage": 1, "area": 152, "price": 440, "design": "/houses/h7p.jpeg",  "plan": "/houses/h7s.jpeg",  "extras": [] },
+    { "id": 8,  "code": "H08", "name": "Fynbos",    "beds": 3, "baths": 2, "garage": 2, "area": 190, "price": 520, "design": "/houses/h8p.jpeg",  "plan": "/houses/h8s.jpeg",  "extras": [] },
+    { "id": 9,  "code": "H09", "name": "Jacaranda", "beds": 4, "baths": 3, "garage": 2, "area": 228, "price": 580, "design": "/houses/h9s.jpeg",  "plan": "/houses/h9p.jpeg",  "extras": [] },
+    { "id": 10, "code": "H10", "name": "Impala",    "beds": 3, "baths": 2, "garage": 2, "area": 172, "price": 485, "design": "/houses/h10s.jpeg", "plan": "/houses/h10p.jpeg", "extras": [] },
+    { "id": 11, "code": "H11", "name": "Sable",     "beds": 5, "baths": 4, "garage": 3, "area": 310, "price": 760, "design": "/houses/h11p.jpeg", "plan": "/houses/h11s.jpeg", "extras": [] },
+    { "id": 12, "code": "H12", "name": "Kudu",      "beds": 4, "baths": 3, "garage": 2, "area": 240, "price": 610, "design": "/houses/h12p.jpeg", "plan": "/houses/h12s.jpeg", "extras": [] },
+    { "id": 13, "code": "H13", "name": "Eland",     "beds": 4, "baths": 2, "garage": 2, "area": 205, "price": 550, "design": "/houses/h13p.jpeg", "plan": "/houses/h13s.jpeg", "extras": [] },
+    { "id": 14, "code": "H14", "name": "Oryx",      "beds": 5, "baths": 4, "garage": 3, "area": 295, "price": 720, "design": "/houses/h14s.jpeg", "plan": "/houses/h14p.jpeg", "extras": [] },
+    { "id": 15, "code": "H15", "name": "Nyala",     "beds": 4, "baths": 3, "garage": 2, "area": 236, "price": 600, "design": "/houses/h15s.jpeg", "plan": "/houses/h15p.jpeg", "extras": [] },
+    { "id": 17, "code": "H17", "name": "Springbok", "beds": 4, "baths": 3, "garage": 2, "area": 250, "price": 640, "design": "/houses/h17p.jpeg", "plan": "/houses/h17s.jpeg", "extras": [] },
+    { "id": 18, "code": "H20", "name": "Gemsbok",   "beds": 5, "baths": 4, "garage": 3, "area": 320, "price": 780, "design": "/houses/h20p.jpeg", "plan": "/houses/h20s.jpeg", "extras": ["/houses/h20p-1.jpeg"] }
+  ]
+}

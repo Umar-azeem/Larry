@@ -1,0 +1,72 @@
+[
+  {
+    "id": "modern-seating",
+    "name": "MODERN SEATING",
+    "image": "/hi/e-c1.jpg",
+    "count": "8 pieces",
+    "slug": "modern-seating"
+  },
+  {
+    "id": "modular-design",
+    "name": "MODULAR DESIGN",
+    "image": "/hi/e-c2.jpg",
+    "count": "6 pieces",
+    "slug": "modular-design"
+  },
+  {
+    "id": "cloud-collection",
+    "name": "CLOUD COLLECTION",
+    "image": "/hi/e-c3.jpg",
+    "count": "4 pieces",
+    "slug": "cloud-collection"
+  },
+  {
+    "id": "artistic-pieces",
+    "name": "ARTISTIC PIECES",
+    "image": "/hi/e-c21.jpg",
+    "count": "5 pieces",
+    "slug": "artistic-pieces"
+  },
+  {
+    "id": "contemporary",
+    "name": "CONTEMPORARY",
+    "image": "/hi/ho1.png",
+    "count": "7 pieces",
+    "slug": "contemporary"
+  },
+  {
+    "id": "textural-craft",
+    "name": "TEXTURAL CRAFT",
+    "image": "/hi/ho2.webp",
+    "count": "3 pieces",
+    "slug": "textural-craft"
+  },
+  {
+    "id": "maximalist-art",
+    "name": "MAXIMALIST ART",
+    "image": "/hi/ho3.webp",
+    "count": "4 pieces",
+    "slug": "maximalist-art"
+  },
+  {
+    "id": "scandinavian-comfort",
+    "name": "SCANDINAVIAN COMFORT",
+    "image": "/hi/ho8.png",
+    "count": "6 pieces",
+    "slug": "scandinavian-comfort"
+  },
+  {
+    "id": "abstract-forms",
+    "name": "ABSTRACT FORMS",
+    "image": "/hi/ho9.jpg",
+    "count": "5 pieces",
+    "slug": "abstract-forms"
+  },
+  {
+    "id": "luxury-textures",
+    "name": "LUXURY TEXTURES",
+    "image": "/hi/ho10.png",
+    "count": "8 pieces",
+    "slug": "luxury-textures"
+  }
+]

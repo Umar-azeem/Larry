@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState, useCallback } from "react";
+import { Play, ArrowRight, Award, Calendar } from "lucide-react";
 
 const titles = [
   "Custom Home Designs.",
@@ -18,31 +19,30 @@ export function PhilosophySection() {
 
   const updateTransforms = useCallback(() => {
     if (!sectionRef.current) return;
-    
+
     const rect = sectionRef.current.getBoundingClientRect();
     const windowHeight = window.innerHeight;
     const sectionHeight = sectionRef.current.offsetHeight;
-    
-    // Calculate progress based on scroll position
+
     const scrollableRange = sectionHeight - windowHeight;
     const scrolled = -rect.top;
     const progress = Math.max(0, Math.min(1, scrolled / scrollableRange));
-    
-    // Title rotates through 3 texts based on scroll progress
+
     setTitleOpacity(progress);
 
-    // Description word animation
     if (descriptionRef.current) {
       const descRect = descriptionRef.current.getBoundingClientRect();
       const descTop = descRect.top;
       const descHeight = descRect.height;
-      
-      // Start animation when element enters viewport
+
       const startTrigger = windowHeight * 0.8;
       const endTrigger = windowHeight * 0.2;
-      
+
       if (descTop < startTrigger && descTop > endTrigger - descHeight) {
-        const descProgress = Math.max(0, Math.min(1, (startTrigger - descTop) / (startTrigger - endTrigger)));
+        const descProgress = Math.max(
+          0,
+          Math.min(1, (startTrigger - descTop) / (startTrigger - endTrigger)),
+        );
         setDescriptionProgress(descProgress);
       }
     }
@@ -58,7 +58,7 @@ export function PhilosophySection() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     updateTransforms();
-    
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       if (rafRef.current) {
@@ -68,29 +68,35 @@ export function PhilosophySection() {
   }, [updateTransforms]);
 
   return (
-    <section id="philosophy" className="bg-background">
-      {/* Scroll-Animated Hero Section */}
-      <div ref={sectionRef} className="relative" style={{ height: "200vh" }}>
+    <section id="philosophy" className="bg-[#f4f4f4]">
+      {/* Scroll-Animated Hero Section (Kept from original) */}
+      <div ref={sectionRef} className="relative" style={{ height: "150vh" }}>
         <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
           <div className="relative w-full max-w-7xl px-4 grid lg:grid-cols-2 gap-12 items-center">
-            
             {/* Title - 3D rotation */}
-            <div 
+            <div
               className="flex items-center justify-center pointer-events-none"
-              style={{ perspective: '1000px' }}
+              style={{ perspective: "1000px" }}
             >
-              <div className="relative w-full" style={{ transformStyle: 'preserve-3d', minHeight: '150px' }}>
+              <div
+                className="relative w-full"
+                style={{ transformStyle: "preserve-3d", minHeight: "150px" }}
+              >
                 {titles.map((title, index) => {
                   const isLastText = index === titles.length - 1;
                   const segmentSize = 1 / titles.length;
                   const startProgress = index * segmentSize;
                   const endProgress = (index + 1) * segmentSize;
-                  
+
                   let rotateX = 0;
                   let opacity = 0;
-                  
-                  if (titleOpacity >= startProgress && titleOpacity < endProgress) {
-                    const localProgress = (titleOpacity - startProgress) / segmentSize;
+
+                  if (
+                    titleOpacity >= startProgress &&
+                    titleOpacity < endProgress
+                  ) {
+                    const localProgress =
+                      (titleOpacity - startProgress) / segmentSize;
                     rotateX = (1 - localProgress) * 90;
                     opacity = localProgress;
                   } else if (titleOpacity >= endProgress) {
@@ -105,19 +111,19 @@ export function PhilosophySection() {
                     rotateX = 90;
                     opacity = 0;
                   }
-                  
+
                   return (
-                    <h2 
+                    <h2
                       key={index}
-                      className="absolute inset-0 flex items-center justify-center lg:justify-start text-[10vw] sm:text-[8vw] font-medium leading-tight tracking-tighter text-foreground lg:text-[4.5vw] text-center lg:text-left px-4 lg:px-0"
+                      className="absolute inset-0 flex items-center justify-center lg:justify-start text-[10vw] sm:text-[8vw] font-medium leading-tight tracking-tighter text-gray-900 lg:text-[4.5vw] text-center lg:text-left px-4 lg:px-0"
                       style={{
                         transform: `rotateX(${rotateX}deg) translateZ(0)`,
                         opacity,
-                        transformStyle: 'preserve-3d',
-                        backfaceVisibility: 'hidden',
-                        WebkitBackfaceVisibility: 'hidden',
-                        willChange: 'transform, opacity',
-                        WebkitFontSmoothing: 'antialiased',
+                        transformStyle: "preserve-3d",
+                        backfaceVisibility: "hidden",
+                        WebkitBackfaceVisibility: "hidden",
+                        willChange: "transform, opacity",
+                        WebkitFontSmoothing: "antialiased",
                       }}
                     >
                       {title}
@@ -129,16 +135,15 @@ export function PhilosophySection() {
 
             {/* 3D Isometric Image Panel */}
             <div className="hidden lg:flex items-center justify-center relative">
-              <div 
+              <div
                 className="relative w-full max-w-md aspect-square transition-transform duration-700 hover:scale-105"
                 style={{
                   transform: `rotateY(${titleOpacity * 15 - 10}deg) rotateX(${titleOpacity * 10 - 5}deg)`,
-                  transformStyle: 'preserve-3d',
+                  transformStyle: "preserve-3d",
                 }}
               >
-                {/* Using your provided asset */}
-                <Image 
-                  src="/images/12-iso-3d-complete-house.png"
+                <Image
+                  src="/images/.png" // Make sure this path is correct
                   alt="LM Stevens Designs 3D Construction Process"
                   fill
                   className="object-contain drop-shadow-2xl"
@@ -146,76 +151,110 @@ export function PhilosophySection() {
                 />
               </div>
             </div>
-
           </div>
         </div>
       </div>
 
-      {/* Description & Features */}
-      <div ref={descriptionRef} className="px-6 pt-8 pb-20 md:px-12 md:pt-12 md:pb-28 lg:px-20 lg:pt-16 lg:pb-36">
-        <div className="max-w-5xl mx-auto text-center">
-          
-          <p className="mt-8 leading-relaxed text-muted-foreground text-2xl md:text-3xl lg:text-4xl text-center font-light">
-            {("LM Stevens Designs provides residential design and permit-ready planning services throughout Western Washington. We specialize in custom homes, additions, remodels, ADUs, garages, and shops — designed around your property, goals, and local permitting requirements.").split(" ").map((word, index, array) => {
-              const wordProgress = Math.max(0, Math.min(1, (descriptionProgress * array.length) - index));
-              const opacity = wordProgress;
-              const blur = (1 - wordProgress) * 40;
-              
-              return (
-                <span
-                  key={index}
-                  style={{
-                    opacity,
-                    filter: `blur(${blur}px)`,
-                    transition: 'opacity 0.3s ease, filter 0.3s ease',
-                  }}
-                >
-                  {word}{index < array.length - 1 ? " " : ""}
-                </span>
-              );
-            })}
-          </p>
+      {/* Main Content Area (Redesigned to match reference) */}
+      <div
+        ref={descriptionRef}
+        className="px-6 pb-24 md:px-12 lg:px-20 max-w-[1400px] mx-auto"
+      >
+        {/* Top Section: Image + Text */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+          {/* Left Side: Images & Google Badge */}
+          <div className="relative mt-10 lg:mt-0">
+            {/* Main Image */}
 
-          {/* Key Features Grid */}
-          <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-            {[
-              {
-                icon: (
-                  <svg className="w-8 h-8 text-primary mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                ),
-                title: "50+ Years Experience",
-                desc: "Decades of expert architectural design and building services across the West Coast."
-              },
-              {
-                icon: (
-                  <svg className="w-8 h-8 text-primary mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                ),
-                title: "Permit-Ready Plans",
-                desc: "Tailored to local requirements, ensuring a smooth approval process for your project."
-              },
-              {
-                icon: (
-                  <svg className="w-8 h-8 text-primary mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                ),
-                title: "300+ Happy Clients",
-                desc: "A proven track record of bringing joy to homeowners through personalized design."
-              }
-            ].map((feature, i) => (
-              <div key={i} className="p-6 rounded-2xl bg-muted/50 border border-border/50 hover:bg-muted transition-colors">
-                {feature.icon}
-                <h3 className="text-xl font-semibold text-foreground mb-2">{feature.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{feature.desc}</p>
-              </div>
-            ))}
+            <div className="relative aspect-[4/3] rounded-sm overflow-hidden shadow-xl bg-black">
+              <video
+                src="/videos/vdi.mp4" // <-- REPLACE: Path to your actual video file
+                controls
+                playsInline
+                className="w-full h-full object-cover"
+                poster="/images/video-poster.jpg" // <-- OPTIONAL: Replace with a thumbnail image
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+
+           
+
+            {/* Client Portrait (Overlapping bottom right) */}
+            <div className="absolute -bottom-16 right-4 md:right-12 w-32 h-40 md:w-64 md:h-56 rounded-xl border-[6px] border-white overflow-hidden shadow-2xl z-20">
+              <Image
+                src="/lm/pokkk.webp" // <-- REPLACE: The man in sunglasses
+                alt="Client"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
 
+          {/* Right Side: Text Content */}
+          <div className="mt-16 lg:mt-0 pt-8 lg:pt-0">
+            <p className="text-[#C23B2E] font-serif italic text-xl mb-4 tracking-wide">
+              ABOUT US
+            </p>
+
+            <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-serif font-bold text-gray-800 leading-[1.1] mb-8">
+              Design The Life You've Imagined, With Larry
+            </h2>
+
+            <p className="text-gray-600 leading-relaxed mb-8 text-base md:text-lg">
+              We believe every project is personal. That's why we take the time
+              to understand your space, your style, and your story and translate
+              that into a design that lives beautifully and works effortlessly.
+            </p>
+
+            <p className="text-gray-600 leading-relaxed mb-10 text-base md:text-lg">
+              With a skilled team, deep local roots, and bold creative thinking,
+              LM Stevens Designs is your partner from the very first sketch to
+              the final walkthrough.
+            </p>
+
+            {/* Features List */}
+            <div className="space-y-8 mb-10">
+              <div className="flex gap-4 items-start">
+                <div className="text-[#000000] mt-1 flex-shrink-0">
+                  <Award className="w-8 h-8" strokeWidth={1.5} />
+                </div>
+                <div>
+                  <h4 className="text-xl font-serif font-bold text-gray-800 mb-1">
+                    Experienced Team
+                  </h4>
+                  <p className="text-gray-500 text-sm">
+                    With our amazing team members, we're proud to bring joy to
+                    more than 300 Satisfied Clients.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4 items-start">
+                <div className="text-[#000000] mt-1 flex-shrink-0">
+                  <Calendar className="w-8 h-8" strokeWidth={1.5} />
+                </div>
+                <div>
+                  <h4 className="text-xl font-serif font-bold text-gray-800 mb-1">
+                    50+ Years of Experience
+                  </h4>
+                  <p className="text-gray-500 text-sm">
+                    For over 50 years, LM Stevens has been offering expert
+                    architectural design & building services.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Button */}
+            <button className="bg-[#000000] hover:bg-[#000000] text-white px-8 py-3.5 rounded-full text-sm font-semibold tracking-wide flex items-center gap-2 transition-colors duration-300">
+              VIEW SERVICES
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
+
+        {/* Bottom Section: Video Placeholders */}
       </div>
     </section>
   );
