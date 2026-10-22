@@ -61,35 +61,42 @@ export function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-10 md:flex">
+        <nav className="hidden items-center gap-10 md:flex ">
           <Link
-            href="technology"
-            className="text-sm transition-colors text-muted-foreground hover:text-foreground"
+            href="/our-services"
+            className={`text-sm transition-colors  ${
+                isScrolled ? "text-muted-foreground hover:text-foreground " : "  text-white hover:text-foreground"
+              }`}
           >
-            Design
+            Our Services
           </Link>
           <Link
-            href="gallery"
-            className="text-sm transition-colors text-muted-foreground hover:text-foreground"
+            href="/areas-we-serve"
+            className={`text-sm transition-colors  ${
+                isScrolled ? "text-muted-foreground hover:text-foreground " : "  text-white hover:text-foreground"
+              }`}
           >
-            Gallery
+            Areas We Serve
           </Link>
           <Link
-            href="accessories"
-            className="text-sm transition-colors text-muted-foreground hover:text-foreground"
+            href="/portfolio"
+            className={`text-sm transition-colors  ${
+                isScrolled ? "text-muted-foreground hover:text-foreground " : "  text-white hover:text-foreground"
+              }`}
           >
-            Models
+            Portfolio
           </Link>
           <Link
-            href="#about"
-            className="text-sm transition-colors text-muted-foreground hover:text-foreground"
+            href="/about"
+            className={`text-sm transition-colors  ${
+                isScrolled ? "text-muted-foreground hover:text-foreground " : "  text-white hover:text-foreground"
+              }`}
           >
             About
           </Link>
         </nav>
 
-        {/* CTA */}
-        <div className="hidden items-center gap-6 md:flex">
+        <div className="hidden items-center gap-6 md:flex  mr-4">
           <Link
             href="/contact"
             className="px-4 py-2 text-sm font-medium transition-all rounded-full bg-foreground text-background hover:opacity-80"

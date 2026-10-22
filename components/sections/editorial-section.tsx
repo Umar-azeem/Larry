@@ -18,15 +18,16 @@ export function EditorialSection() {
 
   const updateParallax = useCallback(() => {
     if (!videoRef.current) return;
-    
+
     const rect = videoRef.current.getBoundingClientRect();
     const windowHeight = window.innerHeight;
-    
+
     const videoTop = rect.top;
     const videoBottom = rect.bottom;
-    
+
     if (videoBottom > 0 && videoTop < windowHeight) {
-      const progress = 1 - (videoTop + rect.height / 2) / (windowHeight + rect.height);
+      const progress =
+        1 - (videoTop + rect.height / 2) / (windowHeight + rect.height);
       setScrollProgress(Math.max(0, Math.min(1, progress)));
     }
   }, []);
@@ -41,7 +42,7 @@ export function EditorialSection() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     updateParallax();
-    
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       if (rafRef.current) {
@@ -51,30 +52,29 @@ export function EditorialSection() {
   }, [updateParallax]);
 
   // Parallax effect: image moves up as you scroll down
-  const parallaxY = (scrollProgress - 0.5) * 40; 
+  const parallaxY = (scrollProgress - 0.5) * 40;
 
   return (
     <section className="bg-[#0a0f14] overflow-hidden">
-      
       {/* Full-width Image with Parallax */}
-      <div 
-        ref={videoRef} 
+      <div
+        ref={videoRef}
         className="relative w-full h-[50vh] md:h-[60vh] lg:h-[75vh] overflow-hidden border-b border-white/5"
       >
         {/* Parallax Image Container */}
-        <div 
+        <div
           className="absolute inset-0 w-full h-[120%] -top-[10%]"
           style={{
             transform: `translate3d(0, ${parallaxY}px, 0)`,
             WebkitTransform: `translate3d(0, ${parallaxY}px, 0)`,
-            backfaceVisibility: 'hidden',
-            WebkitBackfaceVisibility: 'hidden',
-            willChange: 'transform',
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden",
+            willChange: "transform",
           }}
         >
           <Image
             src="/images/05-scaffolding-building.svg" // Replaced video with your construction asset
-            alt="LM Stevens Designs Construction Process"
+            alt="LMS Home Designs Construction Process"
             fill
             className="object-cover"
             priority
@@ -84,7 +84,7 @@ export function EditorialSection() {
         {/* Cinematic Overlays */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f14] via-[#0a0f14]/40 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f14]/80 via-transparent to-transparent" />
-        
+
         {/* Optional Text Overlay on Image */}
         <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-12 lg:p-20 max-w-4xl">
           <span className="text-cyan-400 font-bold tracking-widest uppercase text-xs md:text-sm mb-2 md:mb-4">
@@ -92,7 +92,9 @@ export function EditorialSection() {
           </span>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tighter drop-shadow-lg">
             Precision in every <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-orange-300">detail.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-orange-300">
+              detail.
+            </span>
           </h2>
         </div>
       </div>
@@ -107,7 +109,7 @@ export function EditorialSection() {
             >
               {/* Glowing Accent Line */}
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
+
               <p className="mb-2 md:mb-3 text-[10px] md:text-xs uppercase tracking-widest text-slate-400 font-bold">
                 {spec.label}
               </p>
@@ -118,7 +120,6 @@ export function EditorialSection() {
           ))}
         </div>
       </div>
-      
     </section>
   );
 }

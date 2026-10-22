@@ -25,7 +25,7 @@ const slides = [
   {
     id: "traditional",
     tab: "Traditional",
-    video: "/videos/v2.mp4",
+    video: "/videos/v6.mp4",
     title: "Classic Pacific Northwest",
     text: "Timeless gable rooflines, warm wood accents, and welcoming curb appeal.",
     specs: ["Mason Co.", "Remodel", "50+ Yrs"],
@@ -34,7 +34,7 @@ const slides = [
   {
     id: "adu",
     tab: "ADU",
-    video: "/videos/v1.mp4",
+    video: "/videos/v7.mp4",
     title: "Detached ADU",
     text: "Maximize your property value with a fully permitted backyard cottage.",
     specs: ["Tacoma", "ADU", "Zoning"],
@@ -43,7 +43,7 @@ const slides = [
   {
     id: "shop",
     tab: "Shop",
-    video: "/videos/v4.mp4",
+    video: "/videos/v8.mp4",
     title: "Custom Shop & Garage",
     text: "Engineered for heavy equipment, high ceilings, and PNW weather.",
     specs: ["Pierce Co.", "Structural", "Engineered"],
@@ -86,7 +86,7 @@ function Tab({
       >
         {label}
       </span>
-      <span className="block h-[1.5px] w-full bg-white/20 overflow-hidden rounded-full group-focus-visible:ring-2 ring-white/70">
+      <span className="block h-[1.5px] w-full bg-white overflow-hidden rounded-full group-focus-visible:ring-2 ring-white/70">
         <motion.span className="block h-full bg-primary" style={{ width }} />
       </span>
     </button>
@@ -173,8 +173,8 @@ export function Hero() {
       ))}
 
       {/* Cinematic Overlays */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#05080a]/90 via-black/20 to-black/10" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#05080a]/60 via-transparent to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#05080a]/40 via-black/20 to-black/10" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#05080a]/30 via-transparent to-transparent" />
 
       {/* Compact Floating Card */}
       <motion.div
@@ -187,7 +187,7 @@ export function Hero() {
         onFocus={() => setHovered(true)}
         onBlur={() => setHovered(false)}
       >
-        <div className="rounded-2xl border border-white/10 bg-[#0a0f14]/85 p-4 sm:p-5 text-white shadow-2xl backdrop-blur-xl">
+        <div className="rounded-2xl border border-white/10 bg-[#0a0f14]/15 p-4 sm:p-5 text-white shadow-2xl backdrop-blur-xl">
           {/* Tabs */}
           <div className="flex gap-2 sm:gap-3">
             {slides.map((s, i) => (

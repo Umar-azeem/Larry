@@ -144,7 +144,7 @@ export function PhilosophySection() {
               >
                 <Image
                   src="/hi/ho7.png" // Make sure this path is correct
-                  alt="LM Stevens Designs 3D Construction Process"
+                  alt="LMS Home Designs 3D Construction Process"
                   fill
                   className="object-contain drop-shadow-2xl"
                   priority
@@ -178,8 +178,6 @@ export function PhilosophySection() {
               </video>
             </div>
 
-           
-
             {/* Client Portrait (Overlapping bottom right) */}
             <div className="absolute -bottom-16 right-4 md:right-12 w-32 h-40 md:w-64 md:h-56 rounded-xl border-[6px] border-white overflow-hidden shadow-2xl z-20">
               <Image
@@ -209,8 +207,8 @@ export function PhilosophySection() {
 
             <p className="text-gray-600 leading-relaxed mb-10 text-base md:text-lg">
               With a skilled team, deep local roots, and bold creative thinking,
-              LM Stevens Designs is your partner from the very first sketch to
-              the final walkthrough.
+              LMS Home Designs is your partner from the very first sketch to the
+              final walkthrough.
             </p>
 
             {/* Features List */}
