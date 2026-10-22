@@ -29,11 +29,11 @@ export function Header() {
     >
       <div className="flex items-center justify-between transition-all duration-300 px-2 pl-5 py-2">
         <Link
-          href="#hero"
+          href="/"
           className="text-lg font-medium tracking-tight transition-colors duration-300 text-foreground"
         >
           <Link
-            href="#hero"
+            href="/"
             className="relative block h-18 w-[100px]"
             aria-label="Home"
           >
@@ -91,7 +91,7 @@ export function Header() {
         {/* CTA */}
         <div className="hidden items-center gap-6 md:flex">
           <Link
-            href="reserve"
+            href="/contact"
             className="px-4 py-2 text-sm font-medium transition-all rounded-full bg-foreground text-background hover:opacity-80"
           >
             Contact

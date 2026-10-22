@@ -15,13 +15,12 @@ import { HouseCards } from "@/components/housecard";
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
-      <Header />
+      
       <Hero />
       <CollectionStrip />
       <HouseCards />
       <HeroSection />
       <PhilosophySection />
-      <FeaturedProductsSection />
       <TechnologySection />
       <GallerySection />
       <CollectionSection />

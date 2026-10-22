@@ -160,23 +160,9 @@ export function FooterSection() {
         <div className="max-w-7xl mx-auto flex flex-col items-center justify-between gap-6 md:flex-row">
           
           <div className="flex flex-col md:flex-row items-center gap-3 md:gap-6 text-xs text-slate-500 font-medium text-center md:text-left">
-            <p>&copy; {new Date().getFullYear()} LM Stevens Designs LLC.</p>
+            <p>&copy; {new Date().getFullYear()} LMS Home Designs LLC.</p>
             <span className="hidden md:inline text-white/20">|</span>
-            <p className="flex items-center gap-1.5">
-              Engineered by{" "}
-              <a 
-                href="https://github.com/devumar" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="relative font-bold text-slate-300 overflow-hidden group px-1 hover:text-cyan-400 transition-colors duration-300"
-              >
-                Dev Umar
-                <span className="absolute bottom-0 left-0 w-full h-[1px] bg-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-              </a>
-            </p>
           </div>
-
-          {/* Social Links */}
           <div className="flex items-center gap-4">
             <a
               href="https://facebook.com"

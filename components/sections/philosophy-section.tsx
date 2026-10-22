@@ -143,7 +143,7 @@ export function PhilosophySection() {
                 }}
               >
                 <Image
-                  src="/images/.png" // Make sure this path is correct
+                  src="/hi/ho7.png" // Make sure this path is correct
                   alt="LM Stevens Designs 3D Construction Process"
                   fill
                   className="object-contain drop-shadow-2xl"
@@ -253,8 +253,6 @@ export function PhilosophySection() {
             </button>
           </div>
         </div>
-
-        {/* Bottom Section: Video Placeholders */}
       </div>
     </section>
   );
