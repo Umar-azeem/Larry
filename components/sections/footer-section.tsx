@@ -20,7 +20,7 @@ const footerLinks = {
 
 export function FooterSection() {
   return (
-    <footer className="relative bg-[#0a0f14] overflow-hidden border-t border-white/5 pt-24 pb-0 font-sans">
+    <footer className="relative bg-black overflow-hidden border-t border-white/5 pt-24 pb-0 font-sans">
       {/* =========================================
           PRO-LEVEL 3D BACKGROUND
           ========================================= */}

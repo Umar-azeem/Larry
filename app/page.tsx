@@ -5,7 +5,6 @@ import { GallerySection } from "@/components/sections/gallery-section";
 import { CollectionSection } from "@/components/sections/collection-section";
 import { EditorialSection } from "@/components/sections/editorial-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
-import { FooterSection } from "@/components/sections/footer-section";
 import { Hero } from "@/components/hero";
 import { CollectionStrip } from "@/components/collectionStrip";
 import { HouseCards } from "@/components/housecard";
